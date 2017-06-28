@@ -66,7 +66,9 @@ TextView tv;
 void getLocation(){
     LocationManager lm= (LocationManager) getSystemService(LOCATION_SERVICE);
     Location location=lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-    tv.setText("Loc : "+String.valueOf(location.getLongitude()));
 
+    if(location!=null) {
+        tv.setText("Loc : " + String.valueOf(location.getLongitude()));
+    }
 }
 }
